@@ -1,0 +1,39 @@
+﻿@model Patisserie.Models.Category
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+
+
+<h3 class="my-4">Silmek istediginize emin misiniz?</h3>
+<hr />
+<div class="" style="margin-bottom:130px;margin-top:150px">
+
+
+    <div class="dl-horizontal">
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-1">
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </div>
+            <div class="col-1">
+                @Html.DisplayFor(model => model.CategoryName)
+            </div>
+        </div>
+
+        
+
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color my-4">
+            <input type="submit" value="Delete" class="btn btn-default btn-sm" />
+            @Html.ActionLink("Geri Dön", "Index", new { }, new { @class = "btn btn-primary btn-sm" })
+        </div>
+    }
+</div>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Patisserie.Models.Words>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2 class="mt-5 mb-5">Sözler</h2>
+
+<p>
+    @Html.ActionLink("Söz Ekle", "Create",new { },new { @class= "btn btn-primary btn-sm py-2 px-4 mb-5" })
+</p>
+<table class="table" style="margin-bottom:225px">
+    <tr>
+        <th>
+           Sözün Sahibi
+        </th>
+        <th>
+           Yazılacak Söz
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    @{
+        String a;
+        
+
+        if (item.Text.Length > 40)
+        {
+            a = item.Text.Substring(0, 20) + "...";
+        }
+        else
+        {
+            a = item.Text;
+        }
+        
+    }
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => a)
+    </td>
+    <td>
+        @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }, new { @class = "btn btn-primary  btn-sm py-2 px-4" })
+
+        @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-primary  btn-sm py-2 px-4" })
+
+        @Html.ActionLink("Resim Ekle", "PhotoUpload", "Abouts", new { value = "sozText" + item.Id.ToString() }, new { @class = "btn btn-primary btn-sm py-2 px-4" })
+    </td>
+</tr>
+}
+
+</table>

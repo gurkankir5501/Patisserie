@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    ViewBag.a = "active";
+    ViewBag.b = "";
+    ViewBag.c = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{ Html.RenderAction("Slider", "Home");}
+
+@{ Html.RenderAction("Category2", "Home");}
+
+<!-- Section CTA-->
+<section class="primary-overlay section parallax-container" data-parallax-img="/assets/images/bg-3.jpg">
+    <div class="parallax-content section-xl context-dark text-md-left">
+        <div class="container">
+            <div class="row justify-content-end my-5">
+                <div class="col-sm-8 col-md-7 col-lg-5 my-5">
+                    <div class="cta-modern my-5">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- What We Offer-->
+
+@{ Html.RenderAction("Text", "Home");}
+
+
+<!-- Section CTA-->
+<section class="primary-overlay section parallax-container mt-4" data-parallax-img="/assets/images/bg-4.jpg">
+    <div class="parallax-content section-xxl context-dark text-md-left">
+        <div class="container">
+            <div class="row justify-content-end my-5">
+                <div class="col-sm-9 col-md-7 col-lg-5 my-5">
+                    <div class="cta-modern my-5">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@{ Html.RenderAction("Galery", "Home");}

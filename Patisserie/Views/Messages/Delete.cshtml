@@ -1,0 +1,57 @@
+﻿@model Patisserie.Models.Message
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+
+
+<h3 class="my-5">Mesaji Silmek istedigine emin misin?</h3>
+<div class="my-5">
+   
+    <hr />
+    <dl class="dl-horizontal ">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Messages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Messages)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color mt-5">
+            <input type="submit" value="Delete" class="btn btn-default btn-sm" /> 
+            @Html.ActionLink("Geri Dön", "Index",new { }, new { @class = "btn btn-primary btn-sm" })
+        </div>
+    }
+</div>

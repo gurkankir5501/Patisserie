@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Patisserie.Models.Contact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2 class="my-5">Iletisim Bilgileri</h2>
+
+
+<table class="table" style="margin-top:100px;margin-bottom:146px    ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Facebook)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Instagram)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Twitter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mail)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Facebook)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Instagram)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Twitter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mail)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.Id }, new { @class = "btn btn-primary btn-sm" }) 
+            @Html.ActionLink("Arka Plan Resim Ekle", "PhotoUpload","abouts", new { value="contactPhoto" } , new { @class = "btn btn-primary btn-sm mt-2" }) 
+            
+        </td>
+        <td></td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,33 @@
+﻿@model List<Patisserie.Models.Category>
+
+
+<!-- What We Offer-->
+<section class="section section-md bg-default">
+    <div class="container">
+        <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">Kategoriler</span></h3>
+        <div class="row row-md row-30">
+
+            @foreach (var item in Model)
+            {
+
+                <div class="col-sm-6 col-lg-4">
+
+                    @{ String a = "Category" + item.Id + ".jpg";}
+
+                    <div class="oh-desktop">
+                        <!-- Services Terri-->
+                        <article class="services-terri wow slideInDown">
+                            <div class="services-terri-figure">
+                                <img src="/assets/images/@a" alt="" style="width:335px;height:200px "  />
+                            </div>
+                            <div class="services-terri-caption">
+
+                                <h5 class="services-terri-title" style="font-size:35px"><a href="/Recipe/Index/@item.Id">@item.CategoryName</a></h5>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

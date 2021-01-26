@@ -1,0 +1,54 @@
+﻿@model Patisserie.Models.Administration
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+
+
+<h3 class="mt-5">Silmek Istediginize Emin Misiniz?</h3>
+<hr />
+<div style="margin-bottom:186px;margin-left:550px">
+
+
+
+    <div class="row">
+        <div class="col-2">
+
+            @Html.DisplayNameFor(model => model.Username)
+
+        </div>
+        <div class="col-2">
+
+            @Html.DisplayFor(model => model.Username)
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-2">
+
+            @Html.DisplayNameFor(model => model.Password)
+
+        </div>
+        <div class="col-2">
+
+            @Html.DisplayFor(model => model.Password)
+
+
+        </div>
+    </div>
+    <div class="row" style="margin-left:400px">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color ">
+                <input type="submit" value="Sil" class="btn btn-default  btn-sm px-4 py-2" />
+                @Html.ActionLink("Geri Dön", "Index", new { }, new { @class = "btn btn-primary btn-sm px-4 py-2" })
+            </div>
+        }
+    </div>
+</div>
+

@@ -1,0 +1,24 @@
+﻿@model Patisserie.Models.Contact
+
+    <div class="rd-navbar-aside">
+        <ul class="rd-navbar-contacts-2">
+            <li>
+                <div class="unit unit-spacing-xs">
+                    <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
+                    <div class="unit-body"><div class="phone">@Model.PhoneNumber</div></div>
+                </div>
+            </li>
+            <li>
+                <div class="unit unit-spacing-xs">
+                    <div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
+                    <div class="unit-body"><div class="address">@Model.Adress</div></div>
+                </div>
+            </li>
+        </ul>
+        <ul class="list-share-2">
+            <li><a class="icon mdi mdi-facebook" href="@Model.Facebook"></a></li>
+            <li><a class="icon mdi mdi-twitter" href="@Model.Twitter"></a></li>
+            <li><a class="icon mdi mdi-instagram" href="@Model.Instagram"></a></li>
+          
+        </ul>
+    </div>

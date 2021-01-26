@@ -1,0 +1,326 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <!-- <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon"> -->
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: #eaeaea;
+            border-left: 1px solid #ccc;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #596971;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: #2E3944;
+            }
+
+        .axc {
+            border-style: solid;
+            border-width: 1px;
+            border-color: #0000CC;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="wrapper-triangle">
+            <div class="pen">
+                <div class="line-triangle">
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                </div>
+                <div class="line-triangle">
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                </div>
+                <div class="line-triangle">
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page">
+
+        <!-- Page Header-->
+        <header class="section page-header">
+            <!-- RD Navbar-->
+            <div class="rd-navbar-wrap">
+                <nav class="rd-navbar rd-navbar-modern" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="56px" data-xl-stick-up-offset="56px" data-xxl-stick-up-offset="56px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                    <div class="rd-navbar-inner-outer">
+                        <div class="rd-navbar-inner">
+                            <!-- RD Navbar Panel-->
+                            <div class="rd-navbar-panel">
+                                <div class="rd-navbar-brand mb-4"><a class="brand" href="/home/Index"><img class="brand-logo-dark" src="~/assets/images/logo.jpeg" alt="" style="border-radius:350px;width:auto;height:200px;position:fixed;z-index:unset;top:10px;left:40px" /></a></div>
+                                <!-- RD Navbar Toggle-->
+                                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                                <!-- RD Navbar Brand-->
+                                
+                            </div>
+                            <div class="rd-navbar-right rd-navbar-nav-wrap">
+
+                                <div class="rd-navbar-main">
+                                    <!-- RD Navbar Nav-->
+                                    <ul class="rd-navbar-nav">
+                                        <li class="rd-nav-item @ViewBag.a">
+                                            <a class="rd-nav-link" href="/admin/adminPanel">Anasayfa</a>
+                                        </li>
+                                        <li class="rd-nav-item @ViewBag.b">
+                                            <a class="rd-nav-link" href="/Abouts/Index">Hakkımızda</a>
+                                        </li>
+
+                                        <li class="rd-nav-item @ViewBag.c">
+                                            <a class="rd-nav-link" href="/contacts/Index">İletişim</a>
+                                        </li>
+
+                                        <li class="rd-nav-item @ViewBag.c">
+                                            <a class="rd-nav-link" href="/Admin/LogOut">Çıkış Yap</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rd-navbar-project-hamburger rd-navbar-project-hamburger-open rd-navbar-fixed-element-1" data-multitoggle=".rd-navbar-inner" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate="data-multitoggle-isolate">
+                                <div class="project-hamburger">
+                                    <span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span>
+                                </div>
+                            </div>
+
+                            <div class="rd-navbar-project" style="width:300px">
+                                <div class="rd-navbar-project-header">
+                                    <h5 class="rd-navbar-project-title">İşlemler</h5>
+                                    <div class="rd-navbar-project-hamburger rd-navbar-project-hamburger-close" data-multitoggle=".rd-navbar-inner" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate="data-multitoggle-isolate">
+                                        <div class="project-close"><span></span><span></span></div>
+                                    </div>
+                                </div>
+                                <div class="rd-navbar-project-content rd-navbar-content ">
+                                    <div class="mr-3">
+                                        <div class="row gutters-20" data-lightgallery="group">
+
+
+                                            <div class="container p-2 ml-3">
+                                                <!-- Thumbnail Creative-->
+                                                <article class="thumbnail thumbnail-creative ">
+                                                    <a href="/Categories/index"  class="axc">
+                                                        <div class="thumbnail-creative-figure py-lg-2 my-2">
+                                                            Kategoriler
+                                                        </div>
+                                                        <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div>
+                                                    </a>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mr-3">
+                                        <div class="row gutters-20" data-lightgallery="group">
+
+
+                                            <div class="container p-2 ml-3">
+                                                <!-- Thumbnail Creative-->
+                                                <article class="thumbnail thumbnail-creative">
+                                                    <a href="/Recipes/index" class="axc">
+                                                        <div class="thumbnail-creative-figure py-lg-2 my-2">
+                                                            Tarifler
+                                                        </div>
+                                                        <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div>
+                                                    </a>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mr-3">
+                                        <div class="row gutters-20" data-lightgallery="group">
+
+
+                                            <div class="container p-2 ml-3">
+                                                <!-- Thumbnail Creative-->
+                                                <article class="thumbnail thumbnail-creative">
+                                                    <a href="/Abouts/Index"  class="axc">
+                                                        <div class="thumbnail-creative-figure py-lg-2 my-2">
+                                                            Hakkımızda
+                                                        </div>
+                                                        <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div>
+                                                    </a>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mr-3">
+                                        <div class="row gutters-20" data-lightgallery="group">
+
+
+                                            <div class="container p-2 ml-3">
+                                                <!-- Thumbnail Creative-->
+                                                <article class="thumbnail thumbnail-creative">
+                                                    <a href="/contacts/Index"  class="axc">
+                                                        <div class="thumbnail-creative-figure py-lg-2 my-2">
+                                                            İletişim
+                                                        </div>
+                                                        <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div>
+                                                    </a>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mr-3">
+                                        <div class="row gutters-20" data-lightgallery="group">
+
+
+                                            <div class="container p-2 ml-3">
+                                                <!-- Thumbnail Creative-->
+                                                <article class="thumbnail thumbnail-creative">
+                                                    <a href="/Sliders/Index" class="axc">
+                                                        <div class="thumbnail-creative-figure py-lg-2 my-2">
+                                                            Ana Slider
+                                                        </div>
+                                                        <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div>
+                                                    </a>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mr-3">
+                                        <div class="row gutters-20" data-lightgallery="group">
+
+
+                                            <div class="container p-2 ml-3">
+                                                <!-- Thumbnail Creative-->
+                                                <article class="thumbnail thumbnail-creative">
+                                                    <a href="/MainGaleries/index"  class="axc">
+                                                        <div class="thumbnail-creative-figure py-lg-2 my-2">
+                                                            Galeri
+                                                        </div>
+                                                        <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div>
+                                                    </a>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mr-3">
+                                        <div class="row gutters-20" data-lightgallery="group">
+
+
+                                            <div class="container p-2 ml-3">
+                                                <!-- Thumbnail Creative-->
+                                                <article class="thumbnail thumbnail-creative">
+                                                    <a href="/Words/index"  class="axc">
+                                                        <div class="thumbnail-creative-figure py-lg-2 my-2">
+                                                            Güzel Sözler
+                                                        </div>
+                                                        <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div>
+                                                    </a>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mr-3">
+                                        <div class="row gutters-20" data-lightgallery="group">
+
+
+                                            <div class="container p-2 ml-3">
+                                                <!-- Thumbnail Creative-->
+                                                <article class="thumbnail thumbnail-creative">
+                                                    <a href="/Messages/Index"  class="axc">
+                                                        <div class="thumbnail-creative-figure py-lg-2 my-2">
+                                                            Mesajlarım
+                                                        </div>
+                                                        <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div>
+                                                    </a>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mr-3">
+                                        <div class="row gutters-20" data-lightgallery="group">
+
+
+                                            <div class="container p-2 ml-3">
+                                                <!-- Thumbnail Creative-->
+                                                <article class="thumbnail thumbnail-creative">
+                                                    <a href="/Administrations/index"  class="axc">
+                                                        <div class="thumbnail-creative-figure py-lg-2 my-2">
+                                                            Yönetici
+                                                        </div>
+                                                        <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div>
+                                                    </a>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+
+
+
+        @RenderBody()
+
+
+        <!-- Page Footer-->
+        <footer class="section footer-modern context-dark footer-modern-2 mt-5">
+
+            
+            <div class="footer-modern-line-3">
+                <div class="container">
+                    <div class="row row-10 justify-content-between">
+                       
+                        <div class="col-md-auto container">
+                            <!-- Rights-->
+                            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span></span><span>.&nbsp;</span><span>All Rights Reserved.</span><span> Design&nbsp;by&nbsp;<a href="#">pastaci Serkan Usta</a></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="~/assets/js/core.min.js"></script>
+    <script src="~/assets/js/script.js"></script>
+    <!-- coded by Himic-->
+</body>
+
+</html>
+

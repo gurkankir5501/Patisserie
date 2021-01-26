@@ -1,0 +1,35 @@
+﻿@model Patisserie.Models.Contact
+<div class="aside-contacts">
+    <div class="row row-30">
+        <div class="col-sm-6 col-lg-12 aside-contacts-item">
+            <p class="aside-contacts-title">Sosyal Medya</p>
+            <ul class="list-inline contacts-social-list list-inline-sm">
+                <li><a class="icon mdi mdi-facebook" href="@Model.Facebook"></a></li>
+                <li><a class="icon mdi mdi-twitter" href="@Model.Twitter"></a></li>
+                <li><a class="icon mdi mdi-instagram" href="@Model.Instagram"></a></li>
+                
+            </ul>
+        </div>
+        <div class="col-sm-6 col-lg-12 aside-contacts-item">
+            <p class="aside-contacts-title">Phone</p>
+            <div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
+                <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
+                <div class="unit-body"><a class="phone" href="tel:#">@Model.PhoneNumber</a></div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-12 aside-contacts-item">
+            <p class="aside-contacts-title">E-mail</p>
+            <div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
+                <div class="unit-left"><span class="icon mdi mdi-email-outline"></span></div>
+                <div class="unit-body"><a class="mail" href="mailto:#">@Model.Mail</a></div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-12 aside-contacts-item">
+            <p class="aside-contacts-title">Address</p>
+            <div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
+                <div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
+                <div class="unit-body"><a class="address" href="#">@Model.Adress</a></div>
+            </div>
+        </div>
+    </div>
+</div>

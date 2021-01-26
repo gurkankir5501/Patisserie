@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Patisserie.Models.Category>
+
+@{
+    ViewBag.Title = "Kategoriler";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2 class="mt-5">Kategori islemleri</h2>
+
+<p class="my-4">
+    @Html.ActionLink("Kategori Ekle", "Create",new { }, new { @class = "btn btn-primary btn-sm" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+            @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+            @Html.ActionLink("Resim Ekle", "PhotoUpload", "Abouts", new { value = "category" + item.Id.ToString()}, new { @class = "btn btn-primary btn-sm " })
+
+        </td>
+    </tr>
+}
+
+</table>

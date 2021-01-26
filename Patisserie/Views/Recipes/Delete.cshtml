@@ -1,0 +1,57 @@
+﻿@model Patisserie.Models.Recipe
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+    <h2 class="my-5">silmek istediginize emin misiniz?</h2>
+<hr />
+<div>
+    
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Materials)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Materials)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fabrication)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fabrication)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color my-5">
+    @Html.ActionLink("Geri Dön", "Index", new { }, new { @class = "btn btn-primary btn-sm " })
+    <input type="submit" value="Delete" class="btn btn-default btn-sm" />
+
+</div>
+    }
+</div>

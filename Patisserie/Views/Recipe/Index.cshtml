@@ -1,0 +1,54 @@
+﻿@model List<Patisserie.Models.Recipe>
+@{
+    ViewBag.Title = "Tarifler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!-- Our Shop-->
+<section class="section section-lg bg-default">
+    <div class="container">
+        <h3 class="oh-desktop"><span class="d-inline-block wow slideInUp">@ViewBag.tarif</span></h3>
+        <div class="row row-lg row-30">
+            @{
+                String a = "1.jpg";
+                String b = "Tarif";
+            }
+
+            @if (ViewBag.adet == 0)
+            {
+
+                <h2 class="container">Tarif Bulunmamaktadır</h2>
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+            @{String c = b + item.Id.ToString() + a;}
+            <!-- Product-->
+            <article class="product wow fadeInLeft">
+                <div class="product-figure ">
+                    <img src="/assets/images/@c" alt="" width="161" height="162" />
+                </div>
+
+                <h6 class="product-title">@ViewBag.tarif</h6>
+                <div class="product-price-wrap">
+                    <div class="product-price">@item.RecipeName</div>
+
+                </div>
+                <div class="product-button">
+                    <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="/Recipe/Details/@item.Id">Tarifi Görüntüle</a></div>
+
+                </div>
+            </article>
+        </div>
+
+                }
+            }
+        </div>
+    </div>
+</section>
+

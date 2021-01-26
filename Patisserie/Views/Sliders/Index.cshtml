@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Patisserie.Models.Slider>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2 class="my-md-5">Slider</h2>
+
+<p class="my-3">
+    @Html.ActionLink("Slider Ekle", "Create",new { },new {@class="btn btn-primary btn-sm" })
+</p>
+<table class="table mt-5" style="margin-top:130px;margin-bottom:190px">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TitleText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TitleText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+            @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+            @Html.ActionLink("Resim Ekle", "PhotoUpload","Abouts", new { value ="slider"+item.Id }, new { @class = "btn btn-primary btn-sm" })
+        </td>
+    </tr>
+}
+
+</table>

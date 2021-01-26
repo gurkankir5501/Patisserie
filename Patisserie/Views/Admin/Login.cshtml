@@ -1,0 +1,149 @@
+﻿@model Patisserie.Models.Administration
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Yönetici Giriş Ekranı</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="wrapper-triangle">
+            <div class="pen">
+                <div class="line-triangle">
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                </div>
+                <div class="line-triangle">
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                </div>
+                <div class="line-triangle">
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page">
+
+        <!-- Page Header-->
+        <header class="section page-header">
+            <!-- RD Navbar-->
+            <div class="rd-navbar-wrap">
+                <nav class="rd-navbar rd-navbar-modern" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="56px" data-xl-stick-up-offset="56px" data-xxl-stick-up-offset="56px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                    <div class="rd-navbar-inner-outer">
+
+                        <div class="rd-navbar-inner p-4">
+                            <!-- RD Navbar Panel-->
+                            <div class="rd-navbar-panel">
+                                <!-- RD Navbar Toggle-->
+                                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                                <!-- RD Navbar Brand-->
+                                <a class="brand" href="/home/Index"><img src="~/assets/images/logo.jpeg" alt="" style="border-radius:350px;width:auto;height:180px;position:fixed;top:10px;left:60px" /></a>
+                            </div>
+                            <div class="rd-navbar-right rd-navbar-nav-wrap p-4">
+
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+           
+        </header>
+
+        <div class="container mt-5">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Yönetici Giris Ekranı</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group mt-5" style="margin-left:250px">
+
+                    <div class="row container">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-12" })
+                        </div>
+
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control p-2 pl-2 " } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group" style="margin-left:250px">
+
+                    <div class="row container">
+
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-12" })
+                        </div>
+
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control p-2 pl-2" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                @{
+                    if (ViewBag.result== "unsuccessful")
+                    {
+
+                                <div class="alert alert-danger" role="alert">
+                                    Hatalı Giriş,Tekrar Deneyiniz!!!
+                                </div>
+                    }
+                }
+                <div class="form-group mt-md-4">
+                    <div class="col-md-offset-2 col-md-10 " style="margin-left:280px">
+                        <input type="submit" value="Giriş" class="btn btn-primary py-2 px-4 " />
+                    </div>
+                </div>
+            </div>
+            }
+
+        </div>
+
+        <!-- Global Mailform Output-->
+        <div class="snackbars" id="form-output-global"></div>
+        <!-- Javascript-->
+        <script src="~/assets/js/core.min.js"></script>
+        <script src="~/assets/js/script.js"></script>
+        <!-- coded by Himic-->
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿@model Patisserie.Models.About
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+    <style>
+        .avv{
+            height:100px;
+            width:200px;
+        }
+    </style>
+
+    <div class="container mt-md-5">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4 class="mt-3">Düzenle</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
+
+            <div class="mt-md-5">
+
+                <div class="form-group">
+                    
+                    <div class="col-md-10 row mt-md-5" style="margin-left:250px">
+                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control p-2 col-5" } })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group mt-md-5">
+                   
+                    <div class="col-md-10 row" style="margin-left:250px">
+                        @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.TextAreaFor(model => model.Text, new { htmlAttributes = new { @class = "form-control  avv  p-3 col-7 " }, @rows = "10", @cols = "100" } )
+                        @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+
+                <div class="form-group ">
+                    <div class="col-md-offset-2 col-md-10 mt-md-5" style="margin-left:350px">
+                        @Html.ActionLink("Geri Dön", "Index",new { }, new { @class = "btn btn-primary btn-sm" })
+                        <input type="submit" value="Save" class="btn btn-default btn-sm" />
+
+
+
+                    </div>
+                </div>
+            </div>
+        }
+
+        
+    </div>

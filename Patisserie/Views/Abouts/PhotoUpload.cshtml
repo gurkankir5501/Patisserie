@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Resim Yükle";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2 class="my-md-5">Resim Yükle</h2>
+
+@using (Html.BeginForm("PhotoUpload", "Abouts", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="hidden" name="hidden" value="@ViewBag.value" />
+   
+    <div style="margin-bottom:174px;margin-top:125px">
+        <input type="file" name="file" class="button" />
+        <input type="submit" value="Yükle" class="btn btn-primary btn-sm" />
+    </div>
+    @ViewBag.result
+}
+
+
+
+
+

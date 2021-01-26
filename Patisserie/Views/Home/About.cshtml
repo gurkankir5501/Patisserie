@@ -1,0 +1,47 @@
+﻿@model Patisserie.Models.About
+@{
+    ViewBag.Title = "About";
+    ViewBag.a = "";
+    ViewBag.b = "active";
+    ViewBag.c = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Breadcrumbs -->
+<section class="bg-gray-7">
+    <div class="breadcrumbs-custom box-transform-wrap context-dark">
+        <div class="container">
+            <h3 class="breadcrumbs-custom-title">About us</h3>
+            <div class="breadcrumbs-custom-decor"></div>
+        </div>
+        <div class="box-transform" style="background-image: url(/assets/images/aboutArkaPlan.jpg);"></div>
+    </div>
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">About us</li>
+        </ul>
+    </div>
+</section>
+<section class="section section-lg bg-default">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <!-- Tab panes-->
+
+                <h4>@Model.Title</h4>
+                <p>@Model.Text</p><br />
+
+
+            </div>
+            <div class="col-lg-5">
+                <h5 class="">Serkan KUKUL</h5>
+                <img src="/assets/images/about.jpg" alt="" style="width: 400px;height: 500px" />
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Patisserie.Models.Administration>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2 class="my-4" style="margin-top: 170px">Kullanıcı Islemleri</h2>
+
+<p>
+    @Html.ActionLink("Kullanıcı Ekle", "Create",new { },new {@class="btn btn-primary btn-sm py-2 px-4 mb-3" })
+</p>
+<table class="table" style="margin-bottom:135px;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.Id }, new { @class = "btn btn-primary btn-sm py-2 px-4 mb-3" }) 
+            
+            @Html.ActionLink("Sil", "Delete", new { id=item.Id }, new { @class = "btn btn-primary btn-sm py-2 px-4 mb-3" })
+        </td>
+    </tr>
+}
+
+</table>

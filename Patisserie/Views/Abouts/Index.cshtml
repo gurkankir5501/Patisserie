@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Patisserie.Models.About>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2 class="mt-3">HAKKIMIZDA</h2>
+
+
+<table class="table ml-md-5 mr-md-5" style="margin-top:100px;margin-bottom:215px">
+    <tr>
+        <th >
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th style="width:150px">
+            @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+       
+            String a;
+            String b;
+
+            if (item.Title.Length > 20)
+            {
+                b = item.Title.Substring(0, 20) + " ...";
+            }
+            else
+            {
+                b = item.Title;
+            }
+
+            if (item.Text.Length > 80)
+            {
+                a = item.Text.Substring(0, 80) + " ...";
+            }
+            else
+            {
+                a = item.Text;
+            }
+        
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => b)
+            </td>
+            <td>
+
+
+                @Html.DisplayFor(modelItem => a)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                @Html.ActionLink("Resim Ekle", "PhotoUpload", new { value = "about" }, new { @class = "btn btn-primary btn-sm" })
+                @Html.ActionLink("Arka Plan Resim Ekle", "PhotoUpload", new { value = "aboutArkaPlan" }, new { @class = "btn btn-primary btn-sm" })
+
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,153 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+
+<head>
+    <title>Home</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <!-- <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon"> -->
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: #eaeaea;
+            border-left: 1px solid #ccc;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #596971;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: #2E3944;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="wrapper-triangle">
+            <div class="pen">
+                <div class="line-triangle">
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                </div>
+                <div class="line-triangle">
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                </div>
+                <div class="line-triangle">
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page">
+
+        <!-- Page Header-->
+        <header class="section page-header">
+
+           
+
+            <!-- RD Navbar-->
+            <div class="rd-navbar-wrap">
+
+                <nav class="rd-navbar rd-navbar-modern" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="56px" data-xl-stick-up-offset="56px" data-xxl-stick-up-offset="56px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+
+                    <div class="rd-navbar-inner-outer">
+
+                        <div class="rd-navbar-inner">
+                            
+                            <!-- RD Navbar Panel-->
+                            <div class="rd-navbar-panel">
+                                <div class="rd-navbar-brand mb-4"><a class="brand" href="/home/Index"><img class="brand-logo-dark" src="~/assets/images/logo.jpeg" alt="" style="border-radius:350px;width:auto;height:220px;position:fixed;z-index:unset;top:0px;left:40px" /></a></div>
+                                <!-- RD Navbar Toggle-->
+                                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                                <!-- RD Navbar Brand-->
+
+                            </div>
+                            <div class="rd-navbar-right rd-navbar-nav-wrap">
+
+                                @{Html.RenderAction("ContactPartial2", "home");}
+
+                                <div class="rd-navbar-main">
+                                    <!-- RD Navbar Nav-->
+                                    <ul class="rd-navbar-nav">
+                                        <li class="rd-nav-item @ViewBag.a">
+                                            <a class="rd-nav-link" href="/home/index">Anasayfa</a>
+                                        </li>
+                                        <li class="rd-nav-item @ViewBag.b">
+                                            <a class="rd-nav-link" href="/home/about">Hakkımızda</a>
+                                        </li>
+
+                                        <li class="rd-nav-item @ViewBag.c">
+                                            <a class="rd-nav-link" href="/home/contact">İletişim</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rd-navbar-project-hamburger rd-navbar-project-hamburger-open rd-navbar-fixed-element-1" data-multitoggle=".rd-navbar-inner" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate="data-multitoggle-isolate">
+                                <div class="project-hamburger">
+                                    <span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span>
+                                </div>
+                            </div>
+                            @{Html.RenderAction("category", "home"); }
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        
+
+
+
+        @RenderBody()
+
+
+        <!-- Page Footer-->
+        <footer class="section footer-modern context-dark footer-modern-2 mt-5">
+            
+            @{ 
+                Html.RenderAction("ContactPartial3", "home");
+            }
+
+        </footer>
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="~/assets/js/core.min.js"></script>
+    <script src="~/assets/js/script.js"></script>
+    <!-- coded by Himic-->
+</body>
+
+</html>
+

@@ -1,0 +1,46 @@
+﻿@model List<Patisserie.Models.Category>
+
+    <style>
+        .axc {
+            border-style: solid;
+            border-width: 1px;
+            border-color: #0000CC;
+        }
+    </style>
+
+<div class="rd-navbar-project" style="width:300px">
+    <div class="rd-navbar-project-header">
+        <h5 class="rd-navbar-project-title">Tarifler</h5>
+        <div class="rd-navbar-project-hamburger rd-navbar-project-hamburger-close" data-multitoggle=".rd-navbar-inner" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate="data-multitoggle-isolate">
+            <div class="project-close"><span></span><span></span></div>
+        </div>
+    </div>
+    <div class="rd-navbar-project-content rd-navbar-content">
+        <div>
+            <div class="  gutters-20" data-lightgallery="group">
+                @{
+                    String b = "category";
+                    String a = ".jpg";
+                }
+                @foreach (var item in Model)
+                {
+
+                    
+                    <div class=" p-2 ml-3 mr-3">
+                        <!-- Thumbnail Creative-->
+                        <article class="thumbnail thumbnail-creative">
+                            <a class="axc" href="/Recipe/Index/@item.Id">
+                                <div class="thumbnail-creative-figure py-2">
+                                    <span>@item.CategoryName</span>
+                                </div>
+                                <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div>
+                            </a>
+                        </article>
+                    </div>
+                    
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@model Patisserie.Models.Words
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+
+
+<h3 class="mt-5">Silmek Istediginize Emin Misiniz?</h3>
+<hr />
+<div style="margin-top:100px;margin-bottom:120px">
+    
+    
+    <dl class="dl-horizontal">
+        <dt >
+           Söz Sahibi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt class="mt-2">
+            Yazılacak Söz
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color mt-5">
+            <input type="submit" value="Sil" class="btn btn-default btn-sm py-2 px-4" /> 
+            @Html.ActionLink("Geri Dön", "Index",new { },new {@class="btn btn-primary btn-sm py-2 px-4" })
+        </div>
+    }
+</div>

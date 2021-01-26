@@ -1,0 +1,26 @@
+﻿@model Patisserie.Models.MainGalery
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+
+
+<h3 class="mt-5">Silmek Istediginize Emin Misiniz?</h3>
+<hr />
+<div style="margin-top:150px;margin-bottom:225px">
+
+
+    
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default py-2 px-4" /> 
+            @Html.ActionLink("Geri Dön", "Index",new { },new {@class= "btn btn-primary  py-2 px-4" })
+        </div>
+    }
+</div>

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Patisserie.Models.Recipe>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2 class="my-3">Tarifler</h2>
+
+<p class="mb-2">
+    @Html.ActionLink("Tarif Ekle", "Create",new { },new { @class="btn btn-primary btn-sm"})
+</p>
+<table class="table" style="margin-top:40px;margin-bottom:250px">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Materials)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fabrication)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @{ 
+            String a;
+            String b;
+
+            if (item.Materials.Length > 20)
+            {
+                a = item.Materials.Substring(0, 20)+"...";
+            }
+            else
+            {
+                a = item.Materials;
+            }
+            if (item.Fabrication.Length > 50)
+            {
+                b = item.Fabrication.Substring(0, 50)+"...";
+            }
+            else
+            {
+                b = item.Fabrication;
+            }
+        }
+        <td>
+            @Html.DisplayFor(modelItem => item.category.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecipeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => b)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm py-2 px-4" })
+            @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-primary btn-sm py-2 px-4" })
+            @Html.ActionLink("Resim1 Ekle", "PhotoUpload","Abouts", new { value ="Tarif"+item.Id.ToString()+"1" }, new { @class = "btn btn-primary btn-sm py-2 px-4" })
+            @Html.ActionLink("Resim2 Ekle", "PhotoUpload","Abouts", new { value ="Tarif" + item.Id.ToString() + "2" }, new { @class = "btn btn-primary btn-sm py-2 px-4" })
+            @Html.ActionLink("Resim3 Ekle", "PhotoUpload","Abouts", new { value ="Tarif" + item.Id.ToString() + "3" }, new { @class = "btn btn-primary btn-sm py-2 px-4" })
+        </td>
+    </tr>
+}
+
+</table>
